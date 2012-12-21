@@ -1,0 +1,84 @@
+<?php if(!defined('SEEYA_PLUGIN_URL')) die(); ?>
+<div class="seeya_mainframe">
+    <div class="seeya_caption">Pageblocker "Seeya" settings</div>
+    <table class="seeya_table">
+        <tr>
+            <td>
+            <div class="seeya_add_question_frame_cap">Block pages:</div>
+            <div class="seeya_block_pages_frame">
+                <form action="<?php echo $_SERVER['PHP_SELF'].'?page=seeya-settings'; ?>" method="POST">
+                    <div class="seeya_inner_cap">Choose page:</div>
+                    <div class="seeya_assoc_list_cap">Associated questions:</div>
+                    <div class="seeya_assoc_list">
+                        <div class="seeya_assoc_ajax_frame">
+                            
+                        </div>
+                    </div>
+                    <select class="seeya_pages_list" name="seeya_page_id">
+                        <?php foreach($pages as $key => $page): ?>
+                        <option value="<?php echo $page->ID; ?>" <?php echo ($_POST['seeya_page_id']==$page->ID)?'selected':'' ?>><?php echo $page->post_title; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <div class="seeya_inner_cap">Choose question:</div>
+                    <select class="seeya_questions_list" name="seeya_question_id">
+                        <?php foreach($questions as $key => $question): ?>
+                        <option value="<?php echo $question->question_id; ?>"><?php echo $question->question_slug; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <?php wp_nonce_field('seeya_que_action', 'seeya_nonce'); ?>
+                    <input type="submit" class="seeya_assoc_submit" name="add_question" value="Add >>>"/>
+                </form>
+            </div>
+            <div class="seeya_add_question_frame_cap">Add new question to base:</div>
+            <div class="seeya_add_question_frame">
+                <form action="<?php echo $_SERVER['PHP_SELF'].'?page=seeya-settings'; ?>" method="POST">
+                    <div class="seeya_inner_cap_long">Question slug:<span class="seeya_error"><?php echo $slug_error; ?></span><span class="seeya_success"><?php echo $slug_success; ?></span></div>
+                    <input class="seeya_question_slug" type="text" name="question_slug" value="<?php echo $_POST['question_slug'] ?>"/>
+                    <div class="seeya_inner_cap_long">Question text:<span class="seeya_error"><?php echo $text_error; ?></span></div>
+                    <textarea class="seeya_question_text" name="question_text"><?php echo $_POST['text_slug'] ?></textarea>
+                    <div class="seeya_inner_cap_long">Answer on the question:<span class="seeya_error"><?php echo $answer_error; ?></span></div>
+                    <input class="seeya_question_answer" type="text" name="question_answer" value="<?php echo $_POST['question_answer'] ?>"/>
+                    <?php wp_nonce_field('seeya_que_action', 'seeya_nonce'); ?>
+                    <input class="seeya_question_submit" name="seeya_question_submit" type="submit" value="Save"/>
+                </form>
+            </div>
+            </td>
+            <td>
+                <div class="seeya_plugin_options_frame_cap">Plugin options:</div>
+                <div class="seeya_plugin_options_frame">
+                    <form action="<?php echo $_SERVER['PHP_SELF'].'?page=seeya-settings'; ?>" method="POST">
+                        <span class="seeya_inner_cap_long">What actions should perform the plugin upon deactivation?</span><br/><br/>
+                        <input id="seeya_radio" type="radio" name="seeya_on_deactivation" value="0" <?php echo $checked_0; ?>/><span class="seeya_inner_cap_long">Leave all tables and options untouched</span><br/>
+                        <input id="seeya_radio" type="radio" name="seeya_on_deactivation" value="1" <?php echo $checked_1; ?>/><span class="seeya_inner_cap_long">Remove all question associations</span><br/>
+                        <input id="seeya_radio" type="radio" name="seeya_on_deactivation" value="2" <?php echo $checked_2; ?>/><span class="seeya_inner_cap_long">Completely remove all plugin's tables and options</span>
+                        <br/><span class="seeya_approve_success"><?php echo $approve_success; ?></span>
+                        <br/>
+                        <?php wp_nonce_field('seeya_que_action', 'seeya_nonce'); ?>
+                        <input type="submit" class="seeya_approve_submit" name="seeya_approve_submit" value="Approve"/>
+                    </form>
+                </div>
+                <div class="seeya_preview_frame_cap">Questions preview / edit:</div>
+                <div class="seeya_preview_frame">
+                    <form action="<?php echo $_SERVER['PHP_SELF'].'?page=seeya-settings'; ?>" method="POST">
+                    <div class="seeya_inner_cap_long">Choose question:<span class="seeya_success"><?php echo $edit_success; ?></span></div>
+                    <select class="seeya_edit_question_slug" name="seeya_edit_question_id">
+                        <?php foreach($questions as $key => $question): ?>
+                        <option value="<?php echo $question->question_id; ?>"><?php echo $question->question_slug; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <div class="seeya_inner_cap_long">Question text:<span class="seeya_error"><?php echo $edit_text_error; ?></span></div>
+                    <textarea class="seeya_editquestion_text" name="question_text"></textarea>
+                    <div class="seeya_inner_cap_long">Answer on the question:<span class="seeya_error"><?php echo $edit_answer_error; ?></span></div>
+                    <input class="seeya_editquestion_answer" type="text" name="question_answer"/>
+                    <?php wp_nonce_field('seeya_que_action', 'seeya_nonce'); ?>
+                    <input class="seeya_editquestion_submit" name="seeya_edit_question_submit" type="submit" value="Save changes"/>
+                    <input class="seeya_editquestion_submit" name="seeya_delete_question_submit" type="submit" value="Delete question"/>
+
+                    </form>
+                    
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+

@@ -1,0 +1,201 @@
+div.seeya_mainframe{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+div.seeya_caption{
+    margin-top: 20px;
+    font-size: 18pt;
+    font-family: helvetica;    
+}
+
+table.seeya_table{
+    border: none;
+}
+
+table.seeya_table td{
+    border: none;
+    vertical-align: bottom;
+}
+
+div.seeya_block_pages_frame{
+    display: block;
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    width: 480px;
+    height: 120px;
+    background-color: #6fd797;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.seeya_pages_list{
+    width: 170px;    
+}
+
+.seeya_questions_list{
+    width: 100px;
+}
+
+.seeya_assoc_submit{
+    width: 70px;
+}
+
+div.seeya_add_question_frame{
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    width: 480px;
+    height: 380px;
+    background-color: #83B4D8;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+div.seeya_preview_frame{
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    margin-left: 35px;
+    width: 480px;
+    height: 380px;
+    display: block;
+    background-color: #ebb990;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+div.seeya_plugin_options_frame{
+    display: block;
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    margin-left: 35px;
+    width: 480px;
+    height: 120px;
+    background-color: #db8098;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+
+div.seeya_plugin_options_frame_cap{
+    margin-left: 45px;
+    width:200px;
+    margin-top: 20px;
+}
+
+div.seeya_preview_frame_cap{
+    margin-left: 45px;
+    width:200px;
+    margin-top: 20px;
+}
+
+
+div.seeya_add_question_frame_cap{
+    width:200px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+input.seeya_approve_submit{
+    width: 80px;
+}
+
+
+input.seeya_question_slug, input.seeya_question_answer, textarea.seeya_question_text, 
+input.seeya_editquestion_answer, textarea.seeya_editquestion_text{
+    width: 445px;
+}
+
+textarea.seeya_question_text, textarea.seeya_editquestion_text{
+    height: 200px;
+    overflow-y: auto;
+}
+
+.seeya_inner_cap{
+    width:200px;
+    margin-top: 10px;
+    color: white;
+}
+
+.seeya_inner_cap_long{
+    width:500px;
+    margin-top: 10px;
+    color: white;
+}
+
+input.seeya_question_submit{
+    margin-top: 10px;
+    width: 60px;
+    height: 30px;
+}
+
+input.seeya_editquestion_submit{
+    margin-top: 10px;
+    width: 120px;
+    height: 30px; 
+}
+
+.seeya_error{
+    color: red;
+    font-size: 8pt;
+}
+
+.seeya_success, .seeya_approve_success{
+    color: green;
+    font-size: 8pt;
+}
+
+.seeya_assoc_list{
+    width: 240px;
+    height: 120px;
+    float: right;
+    margin-top: -19px;
+    margin-right: 23px;
+    overflow: hidden;
+    border: 1px dotted white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    /*background: white;*/
+}
+
+.seeya_assoc_ajax_frame{
+    overflow-y: auto;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 228px;
+    height: 90px;
+    border: none;
+}
+
+.seeya_assoc_list_cap{
+    float: right;
+    margin-top: -18px;
+    margin-right: 135px;
+    color: white;
+}
+
+.seeya_assoc_item{
+    color: green;
+}
+
+.seeya_assoc_cross{
+    color: #044110;
+    cursor: pointer;
+}
+
+.seeya_questions_editlist{
+    width: 200px;
+ }
+ 
+ .seeya_edit_question_slug{
+     width: 200px;
+ }
+ 
