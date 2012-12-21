@@ -1,0 +1,17 @@
+<?php if(!defined('SEEYA_PLUGIN_URL')) die(); ?>
+<div style="font-style: italic">You have to give correct answers on some questions to proceed:</div>
+<br/>
+<div class="seeya_blocker">
+    <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="POST">
+        <?php foreach($questions as $question): ?>
+        <div class="seeya_blocker_question">
+            <?php echo $question->question_text; ?>
+        </div>
+        <div class="seeya_blocker_answer">
+            <input type="text" class="seeya_blocker_answer_input" name="seeya_given_answers[]"/>
+        </div>
+        <hr/>
+        <?php endforeach; ?>
+        <input type="submit" class="seeya_submit_answer" name="seeya_submit_given_answers" value="Submit answer"/>
+    </form>
+</div>

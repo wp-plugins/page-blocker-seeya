@@ -1,0 +1,12 @@
+<?php if(!defined('SEEYA_PLUGIN_URL')) die(); ?>
+<?php foreach($rows as $row): ?>
+<span class="seeya_assoc_item"><?php echo $row->question_slug; ?></span> <span class="seeya_assoc_cross" id="<?php echo $row->question_id; ?>">[x]</span></br>
+<?php endforeach; ?>
+<script type="text/javascript">
+    jQuery('span.seeya_assoc_cross').on('click', function(){
+        var params = {action:      'assoc_list', 
+                      page_id:     jQuery('.seeya_pages_list').val(),
+                      question_id: jQuery(this).attr('id')};
+        jQuery('.seeya_assoc_ajax_frame').load(ajaxurl, params);
+    });
+</script>
